@@ -3,5 +3,18 @@ layout: layout.liquid
 title: 11ty Boilerplate
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<div x-data='getItem()'>
+    <button @click='newName'>Get Name!</button>
+    <h1 x-text='name'></h1>
+</div>
+
+<script>
+function getItem(){
+    return {
+        name: 'Click the button to get a name',
+        newName: function(){
+            this.name = GetName();
+        }
+    };
+}
+</script>
